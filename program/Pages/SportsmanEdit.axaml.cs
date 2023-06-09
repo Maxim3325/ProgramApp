@@ -11,6 +11,7 @@ namespace program.Pages
         public SportsmanEdit(Sportsman sportsman)
         {
             InitializeComponent();
+            GenderCb.Items = DataSystem.Description;
             if (sportsman == null)
             {
                 DataContext = new Sportsman();
@@ -20,7 +21,6 @@ namespace program.Pages
             {
                 isAdd = false;
                 DataContext = sportsman;
-                GenderCb.SelectedIndex = (sportsman.Description == "Мужской") ? 0 : 1;
             }
         }
 
@@ -41,7 +41,6 @@ namespace program.Pages
             try
             {
                 var sportsman = (Sportsman)DataContext;
-                sportsman.Description = ((ComboBoxItem)GenderCb.SelectedItem).Content.ToString();
                 if (isAdd)
                 {
                     DataSystem.Sportsmen.Add(sportsman);

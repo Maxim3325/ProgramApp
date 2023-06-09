@@ -2,6 +2,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia;
 using program.Classes;
+using System.Collections.Generic;
 
 namespace program.Pages
 {
@@ -13,9 +14,29 @@ namespace program.Pages
             loadData();
         }
 
+        private void searchTbKeyUp(object? sender, Avalonia.Input.KeyEventArgs e)
+        {
+            loadData();
+        }
+
         private void loadData()
         {
-            SportsmenDG.Items = DataSystem.Sportsmen;
+            if (string.IsNullOrEmpty(SearchTb.Text))
+            {
+                SportsmenDG.Items = DataSystem.Sportsmen;
+            }
+            else
+            {
+                var filteredSportsmen = new List<Sportsman>();
+                foreach (var el in DataSystem.Sportsmen)
+                {
+                    if (el.Name.Contains(SearchTb.Text))
+                    {
+                        filteredSportsmen.Add(el);
+                    }
+                }
+                SportsmenDG.Items = filteredSportsmen;
+            }
         }
 
         private void backBtnClick(object? sender, RoutedEventArgs e)

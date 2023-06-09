@@ -7,12 +7,16 @@
 	<Grid ColumnDefinitions="*, *" RowDefinitions="50, 40, *, 50">
 		<Button Name="BackBtn" Content="Назад"
 				Click="backBtnClick"/>
+		<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+			<Label Content="Поиск:"/>
+			<TextBox Name="SearchTb" KeyUp="searchTbKeyUp"/>
+		</StackPanel>
 		<Label Grid.Row="1" Content="Спортсмены"/>
 		<DataGrid Grid.Row="2" Name="SportsmenDG" BorderThickness="1" BorderBrush="Black"
 			 Margin="5" IsReadOnly="True">
 			<DataGrid.Columns>
 				<DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
-				<DataGridTextColumn Header="Пол" Binding="{Binding Description}"/>
+				<DataGridTextColumn Header="Пол" Binding="{Binding Description.Name}"/>
 				<DataGridTextColumn Header="Дата рождения" Binding="{Binding BirthDate, StringFormat={}{0:dd.MM.yyyy}}"/>
 			</DataGrid.Columns>
 		</DataGrid>
@@ -22,12 +26,12 @@
 		<StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal">
 			<Button Name="AddSportmanBtn" Content="Добавить" Click="addSportsmanBtnClick"/>
 			<Button Name="EditSportmanBtn" Content="Изменить" Click="editSportsmanBtnClick"/>
-			<Button Name="DeleteSportmanBtn" Content="Удалить" Background="Orange" Click="deleteSportsmanBtnClick"/>
+			<Button Name="DeleteSportmanBtn" Content="Удалить" Background="Aqua" Click="deleteSportsmanBtnClick"/>
 			</StackPanel>
 		<StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
 			<Button Name="AddTrenerBtn" Content="Добавить" Click="addTrenerBtnClick"/>
 			<Button Name="EditTrenerBtn" Content="Изменить"/>
-			<Button Name="DeleteTrenerBtn" Content="Удалить" Background="Orange"/>
+			<Button Name="DeleteTrenerBtn" Content="Удалить" Background="Aqua"/>
 		</StackPanel>
 	</Grid>
 </UserControl>

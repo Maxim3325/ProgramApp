@@ -10,7 +10,7 @@ namespace program.Classes
     {
         public int Id { get;}
         public string Name { get; set; } = "";
-        public string Description { get; set; } = "";
+        public Description Description { get; set; } = DataSystem.Description[0];
         public DateTime BirthDate { get; set; } = DateTime.Now;
         public Sportsman() 
         { 

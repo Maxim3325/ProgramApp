@@ -23,31 +23,31 @@ namespace program
             DataSystem.Treners.Add(new Sportsman()
             {
                 Name = "Владислав",
-                Description = "Мужской",
+                Description = DataSystem.Description[0],
                 BirthDate = DateTime.Parse("12.02.2003")
             });
             DataSystem.Treners.Add(new Sportsman()
             {
                 Name = "Матвей",
-                Description = "Мужской",
+                Description = DataSystem.Description[0],
                 BirthDate = DateTime.Parse("12.02.2003")
             });
             DataSystem.Sportsmen.Add(new Sportsman()
             {
                 Name = "Иван",
-                Description = "Мужской",
+                Description = DataSystem.Description[0],
                 BirthDate = DateTime.Parse("12.02.2003")
             });
             DataSystem.Sportsmen.Add(new Sportsman()
             {
                 Name = "Даниил",
-                Description = "Мужской",
+                Description = DataSystem.Description[0],
                 BirthDate = DateTime.Parse("10.05.1995")
             });
             DataSystem.Sportsmen.Add(new Sportsman()
             {
                 Name = "Алексей",
-                Description = "Мужской",
+                Description = DataSystem.Description[0],
                 BirthDate = DateTime.Parse("06.10.1983")
             });
         }
